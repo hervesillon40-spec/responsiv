@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travaux Express</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Travaux Express</h1>
+    <p>L’application mobile qui connecte clients et artisans en toute simplicité.</p>
+    <a href="#inscription" class="cta-button">Devenir partenaire</a>
+  </header>
+
+  <section>
+    <h2>Comment ça marche</h2>
+    <div class="steps">
+      <div>
+        <h3>1. Inscription</h3>
+        <p>Remplissez le formulaire pour rejoindre notre réseau.</p>
+      </div>
+      <div>
+        <h3>2. Validation</h3>
+        <p>Nous vérifions vos informations et activons votre profil.</p>
+      </div>
+      <div>
+        <h3>3. Missions</h3>
+        <p>Recevez des demandes de clients dans votre zone.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="inscription">
+    <h2>Formulaire d’inscription</h2>
+    <form action="#" method="post">
+      <input type="text" name="nom" placeholder="Nom / Prénom" required>
+      <input type="text" name="entreprise" placeholder="Nom de l’entreprise">
+      <input type="text" name="metier" placeholder="Métier / Spécialité" required>
+      <input type="text" name="zone" placeholder="Zone d’intervention" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="telephone" placeholder="Téléphone">
+      <textarea name="message" placeholder="Message complémentaire"></textarea>
+      <label><input type="checkbox" name="newsletter"> Je souhaite être informé des nouveautés</label>
+      <button type="submit">Envoyer ma demande</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Services supplémentaires</h2>
+    <a href="https://buy.stripe.com/test_8x24gA05X1G862WgwZfQI00" class="cta-button" target="_blank">💳 Paiement sécurisé</a>
+    <a href="mailto:travauxexpress@laposte.net" class="cta-button">📧 Contactez-nous</a>
+  </section>
+
+  <footer>
+    <div id="clock"></div>
+    📧 travauxexpress@laposte.net | 📱 +33 7 69 30 27 25<br>
+    <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a> | <a href="#">CGU</a>
+  </footer>
+
+  <script>
+    document.querySelector("form").addEventListener("submit", function(e) {
+      const email = document.querySelector("input[name='email']").value;
+      if (!email.includes("@")) {
+        alert("Veuillez entrer un email valide.");
+        e.preventDefault();
+      }
+    });
+
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        const zoneInput = document.querySelector("input[name='zone']");
+        zoneInput.value = `Lat: ${position.coords.latitude}, Long: ${position.coords.longitude}`;
+      });
+    }
+
+    function updateClock() {
+      const now = new Date();
+      document.getElementById("clock").textContent = now.toLocaleTimeString();
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+</body>
+</html>
+
