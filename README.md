@@ -34,7 +34,7 @@
 
   <section id="inscription">
     <h2>Formulaire d’inscription</h2>
-    <form action="#" method="post">
+    <form action="https://formspree.io/f/xeopgnbj" method="post">
       <input type="text" name="nom" placeholder="Nom / Prénom" required>
       <input type="text" name="entreprise" placeholder="Nom de l’entreprise">
       <input type="text" name="metier" placeholder="Métier / Spécialité" required>
