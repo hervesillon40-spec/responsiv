@@ -55,7 +55,7 @@
 
   <footer>
     <div id="clock"></div>
-    📧 travauxexpress@laposte.net | 📱 +33 7 69 30 27 25<br>
+    📧 travauxexpress@laposte.net 
     <a href="https://formspree.io/f/xeopgnb">Mentions légales</a> | <a href="https://formspree.io/f/xeopgnb">Politique de confidentialité</a> | <a href="https://formspree.io/f/xeopgnb">CGU</a>
   </footer>
 
